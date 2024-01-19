@@ -1,6 +1,7 @@
 import * as S from './App.styles';
 import { useState } from 'react';
-import ListItem from './components/ListItem/ListItem'
+import ListItem from './components/ListItem/index'
+import { AddArea } from './components/AddArea';
 
 function App () {
 
@@ -21,6 +22,11 @@ function App () {
     <S.Container >
       <S.Area>
         <S.Header>Lista de Tarefas</S.Header>
+
+        <AddArea />
+
+
+
         {list.map((item, index) =>(
           
           <ListItem key={index} item={item}/>

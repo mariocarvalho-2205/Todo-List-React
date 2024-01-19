@@ -1,9 +1,12 @@
 import * as S from './styles'
 
-const ListItem = ({ id, name, done}) => {
+const ListItem = ({ item }) => {
   return (
     <S.Container>
-        <p>{name} {done}</p>
+        <input type="checkbox" name={item.name} id={item.name}/>
+      <label htmlFor={item.name}>
+        {item.name}
+      </label>
     </S.Container>
   )
 }

@@ -23,8 +23,10 @@ function App () {
         <S.Header>Lista de Tarefas</S.Header>
         {list.map((item, index) =>(
           
-          <ListItem key={index} name={item.name} done={item.done}/>
+          <ListItem key={index} item={item}/>
+          
         ))}
+        
       </S.Area>
     </S.Container>
   )

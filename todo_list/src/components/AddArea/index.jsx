@@ -1,13 +1,14 @@
 import * as S from './styles'
-import { useState, KeyboardEvent } from 'react'
+import { useState } from 'react'
 
-export const AddArea = () => {
+export const AddArea = ({ onEnter }) => {
 
     const [ inputText, setInputText ] = useState('')
 
     function handleKeyUp (e) {
-        if (e.code === 'Enter') {
-            
+        if (e.code === 'Enter' && inputText !== '') {
+            onEnter(inputText)
+            setInputText('')
         }
     }
 

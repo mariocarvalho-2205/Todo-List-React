@@ -18,12 +18,22 @@ function App () {
     },
   ]);
 
+  const handleAddTask = (taskName) => {
+    let newList = [...list];
+    newList.push({
+      id: list.length++,
+      name: taskName,
+      done: false
+    })
+    setList(newList)
+  }
+
   return (
     <S.Container >
       <S.Area>
         <S.Header>Lista de Tarefas</S.Header>
 
-        <AddArea />
+        <AddArea onEnter={handleAddTask}/>
 
 
 

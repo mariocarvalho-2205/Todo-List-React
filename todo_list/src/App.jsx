@@ -32,6 +32,12 @@ function App () {
 
   // Adição da função handleCheckboxChange para lidar com a mudança no checkbox
   const handleCheckboxChange = (taskId, isChecked) => {
+    // Verifica se o checkbox está sendo marcado (isChecked === true)
+    // ou se já está marcado (item.done === true)
+    if (!isChecked && list.find((item) => item.id === taskId)?.done) {
+      // Se já está marcado e está tentando desmarcar, não faz nada
+      return;
+    }
     setList((prevList) =>
       prevList.map((item) =>
         item.id === taskId ? { ...item, done: isChecked } : item
